@@ -19,16 +19,11 @@ class App extends React.Component {
     const macamo = await fetchMacamo();
     const central = await fetchCentral(); 
     const mavalane = await fetchMavalane();    
-    this.setState({ macamo });
-    this.setState({central});
-    this.setState({mavalane});
+    this.setState({ macamo, central, mavalane });
   } 
   render() {
-    const { macamo } = this.state;  
-    const { central } = this.state; 
-    const { mavalane } = this.state;  
+    const { macamo, central, mavalane } = this.state;     
     return (
-
       <div className={styles.container}>      
         <img className={styles.image} src={image} alt="Hospital de referencia" />
         <h3><b>Vagas disponiveis nos Hospitais</b></h3>       
@@ -59,7 +54,7 @@ class App extends React.Component {
       <Button
         variant="contained"
         color="primary"
-      >Agendar COnsulta</Button>
+      >Agendar Consulta</Button>
       </a>
     </div>
     );    
